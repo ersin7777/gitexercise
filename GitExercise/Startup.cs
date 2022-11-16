@@ -4,6 +4,14 @@ namespace GitExercise
 {
     public class Startup
     {
+        private static bool CheckCredentials()
+        {
+            Console.Write("Enter password to gain acess: ");
+            string password = Console.ReadLine();
+            Console.Clear();
+            return password == Password;
+        }
+        private const string Password = "abcd1234";
         public static void Main()
         {
             Console.WriteLine("Console Calculator App");
@@ -34,6 +42,9 @@ namespace GitExercise
                     break;
                 case "m":
                     OptionsManager.Multiply(a, b);
+                    break;
+                case "d":
+                    OptionsManager.Divide(a, b);
                     break;
             }
 
